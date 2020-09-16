@@ -1,0 +1,24 @@
+{
+  "name": "siakadbot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "puppeteer": "^5.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gagassurya19",
+  "license": "ISC",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gagassurya19/siakad-absen.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gagassurya19/siakad-absen/issues"
+  },
+  "homepage": "https://github.com/gagassurya19/siakad-absen#readme",
+  "description": ""
+}
