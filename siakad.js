@@ -42,7 +42,8 @@ const siakad = {
 
             console.log("-- Login Success");
         }catch(err){
-            console.log("- Gagal Login")
+            console.log("- Gagal Login");
+            console.log(err);
         }
     },
 
@@ -73,6 +74,7 @@ const siakad = {
             console.log("-- Absen Success");
         } catch(err){
             console.log("- Ga bisa Absen");
+            console.log(err);
             // await siakad.page.screenshot({path: 'unsuccess-'+email+'.png'});
         }
     },
@@ -85,9 +87,10 @@ const siakad = {
 
             console.log("-- Logout");
         }catch(err){
-            console.log("gagal logout")
+            console.log("gagal logout");
+            console.log(err);
         }
-         debugger;
+        //  debugger;
     }
 }
 
