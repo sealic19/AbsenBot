@@ -1,5 +1,5 @@
 const siakad = require('./siakad');
-const account = require('./account2.json');
+const account = require('./account.json');
 
 (async () => {
     await siakad.initialize();
