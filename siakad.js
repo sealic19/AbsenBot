@@ -11,7 +11,7 @@ const siakad = {
     initialize: async () => {
         siakad.browser = await puppeteer.launch({
             headless: true,
-            args: ['--no-sandbox', '--disable-setuid-sandbox']
+            args: ['--no-sandbox']
         });
 
         siakad.page = await siakad.browser.newPage();
@@ -54,6 +54,8 @@ const siakad = {
             await siakad.page.waitForTimeout(500);
 
             await siakad.page.goto(HADIR_URL, {waitUntil: 'networkidle2'});
+            
+            await siakad.page.waitForTimeout(500);
 
             let hadirSelector = await siakad.page.$x('/html/body/section[2]/div/div[2]/div/div/form/table/tbody/tr[1]/td[2]/div/button/span[1]');
             await hadirSelector[0].click();
@@ -82,9 +84,9 @@ const siakad = {
 
     logout: async () => {
         try{
-            await siakad.page.waitForTimeout(500);
-
             await siakad.page.goto(LOGOUT_URL, {waitUntil: 'networkidle2'});
+
+            await siakad.page.waitForTimeout(500);
 
             console.log("-- Logout");
         }catch(err){
