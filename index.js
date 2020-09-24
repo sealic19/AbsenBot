@@ -17,9 +17,9 @@ const account = require('./account.json');
     } catch(e) {
         console.log(e);
         process.exit();
-    }
-    finally {
+    } finally {
         siakad.browser.close();
+        process.exit();
     }
 
     // debugger;

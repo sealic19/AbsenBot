@@ -1,4 +1,12 @@
 const puppeteer = require('puppeteer');
+const Telegram = require('node-telegram-bot-api');
+// const dbot = require('dbot-js')
+
+var chat_id = '-1001478146003';
+var token = '1169639831:AAGrN3YjyPYcJidMoH4mlqmD-fzoj_SWJWo';
+// var telegramUrl = "https://api.telegram.org/bot" + token;
+
+const bot = new Telegram(token, {polling: true});
 
 const BASE_URL = 'https://siswa.smktelkom-mlg.sch.id';
 const HADIR_URL = 'https://siswa.smktelkom-mlg.sch.id/presnow'
@@ -42,6 +50,9 @@ const siakad = {
             await loginButton[0].click();
 
             console.log("-- Login Success");
+
+            // bot.sendMessage(chat_id, '✅[Login Berhasil] Email: ' + email);
+
         }catch(err){
             console.log("- Gagal Login");
             console.log(err);
@@ -72,13 +83,30 @@ const siakad = {
 
             await siakad.page.waitForTimeout(500);
 
-            // await siakad.page.screenshot({path: 'success-'+email+'.png'});
-            
+            // await siakad.page.screenshot({path: 'success-'+email+'.png', fullPage: true});
+
+            // const url = 'https://www.vhv.rs/dpng/d/356-3568543_check-icon-green-tick-hd-png-download.png';
+            // bot.sendPhoto(chat_id, url);
+
+            // await siakad.page.waitForTimeout(1000);
+
+            bot.sendMessage(chat_id, '✅[Absen Berhasil] Email: ' + email);
+
             console.log("-- Absen Success");
         } catch(err){
             console.log("- Ga bisa Absen");
             console.log(err);
-            // await siakad.page.screenshot({path: 'unsuccess-'+email+'.png'});
+            
+            // const path = "success-" + email + ".png"
+            // await siakad.page.screenshot({path: path, fullPage: true});
+
+            // const url = 'https://jumeirahroyal.com/wp-content/uploads/d7e50cb89c.png';
+            // bot.sendPhoto(chat_id, url);
+
+            // await siakad.page.waitForTimeout(1000);
+
+            bot.sendMessage(chat_id, '❌[Absen Gagal] Email: ' + email);
+
         }
     },
 
@@ -93,6 +121,7 @@ const siakad = {
             console.log("gagal logout");
             console.log(err);
         }
+        // process.exit();
         //  debugger;
     }
 }
