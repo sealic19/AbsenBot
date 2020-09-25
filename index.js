@@ -1,6 +1,6 @@
 const siakad = require('./src/siakad');
 const Telegram = require('./src/sendToTelegram');
-const account = require('./src/account/account2.json');
+const account = require('./src/account/account.json');
 
 (async () => {
     const accountLength = Object.keys(account).length;

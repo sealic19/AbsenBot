@@ -1,7 +1,7 @@
 const Tele = require('node-telegram-bot-api');
 
-// var chat_id = '-1001478146003'; // CHANNEL utama
-const chat_id = '924568718'; // PC dev
+var chat_id = '-1001478146003'; // CHANNEL utama
+// const chat_id = '924568718'; // PC dev
 const token = '1169639831:AAGrN3YjyPYcJidMoH4mlqmD-fzoj_SWJWo';
 const bot = new Tele(token, {polling: true});
 
