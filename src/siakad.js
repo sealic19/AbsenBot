@@ -68,9 +68,9 @@ const siakad = {
             await siakad.page.waitForNavigation({
                 waitUntil: 'networkidle0'
             })
-            await siakad.page.screenshot({path: 'success-'+email+'.png', fullPage: true}); // take screenshoot
+            // await siakad.page.screenshot({path: 'success-'+email+'.png', fullPage: true}); // take screenshoot
             // Send message to telegram and console
-            await Telegram.sendAbsenSukses("[Absen Berhasil] Email: ", email);
+            await Telegram.sendSuccess("[Absen Berhasil] Email: ", email);
             console.log("-- Absen Success");
         } catch(err){
             // Send message to telegram and console eror only
